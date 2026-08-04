@@ -257,3 +257,7 @@ banco_de_dados_gestao_de_ingressos/
 ├── images               # Diretório com as imagens utilizadas
 └── README.md            # Este arquivo
 ```
+
+## 📁 Documentos do Projeto
+
+- 📄 **[Relatório](relatorio.pdf)**
