@@ -43,7 +43,7 @@ O projeto foi desenvolvido em **Python**, utilizando o conector `mysql-connector
 
 ### Entidades do banco
 
-O script `VendaIngressos.py` cria as seguintes tabelas:
+O script `main.py` cria as seguintes tabelas:
 
 | Tabela | Descrição |
 |---|---|
@@ -85,7 +85,7 @@ pip install mysql-connector-python
 
 ### Configuração
 
-No arquivo `VendaIngressos.py`, a função `connect_resgatocao()` define os parâmetros de conexão com o banco:
+No arquivo `main.py`, a função `connect_resgatocao()` define os parâmetros de conexão com o banco:
 
 ```python
 def connect_resgatocao():
@@ -105,7 +105,7 @@ Ajuste `host`, `database`, `user` e `password` de acordo com o seu ambiente, cas
 Com o banco de dados criado e o MySQL em execução, rode o script:
 
 ```bash
-python VendaIngressos.py
+python main.py
 ```
 
 O programa exibirá um menu interativo no terminal:
@@ -251,8 +251,9 @@ ORDER BY
 ## 📁 Estrutura do repositório
 
 ```
-Lucas_Nikolas/
-├── VendaIngressos.py   # Script principal (DDL, DML, consultas e menu)
-├── Relatorio.pdf        # Relatório completo do trabalho
+banco_de_dados_gestao_de_ingressos/
+├── main.py              # Script principal (DDL, DML, consultas e menu)
+├── relatorio.pdf        # Relatório completo do trabalho
+├── images               # Diretório com as imagens utilizadas
 └── README.md            # Este arquivo
 ```
