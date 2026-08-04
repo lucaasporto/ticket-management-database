@@ -2,7 +2,7 @@
 
 Trabalho da disciplina de **Banco de Dados I (DEC7129)** — **Universidade Federal de Santa Catarina, campus Araranguá**.
 
-Professor: **Alexandre Leopoldo Gonçalves**
+Professor: **Dr. Alexandre Leopoldo Gonçalves**
 
 Autores: **Lucas Porto** e **Nikolas Lopes**
 
@@ -31,15 +31,15 @@ O projeto foi desenvolvido em **Python**, utilizando o conector `mysql-connector
 
 ### Modelo Conceitual
 
-> _Espaço reservado para a imagem do Modelo Conceitual (Diagrama Entidade-Relacionamento)._
-
-<!-- ![Modelo Conceitual](imagens/modelo_conceitual.png) -->
+<p align="center">
+  <img src="images/modelo_conceitual.jpg" alt="Modelo Conceitual" width="900">
+</p>
 
 ### Modelo Lógico
 
-> _Espaço reservado para a imagem do Modelo Lógico._
-
-<!-- ![Modelo Lógico](imagens/modelo_logico.png) -->
+<p align="center">
+  <img src="images/modelo_logico.jpg" alt="Modelo Lógico" width="900">
+</p>
 
 ### Entidades do banco
 
@@ -63,7 +63,7 @@ O script `VendaIngressos.py` cria as seguintes tabelas:
 | `INGRESSO` | Ingressos disponíveis, ligados a evento, lote e ponto de venda |
 | `COMPRA` | Registro de compra de um ingresso por um usuário com um cartão |
 
-Todas as tabelas usam `ENGINE=InnoDB` e possuem chaves estrangeiras para garantir a integridade referencial entre as entidades relacionadas.
+Todas as tabelas possuem chaves estrangeiras para garantir a integridade referencial entre as entidades relacionadas.
 
 ## 🛠️ Tecnologias utilizadas
 
@@ -170,10 +170,9 @@ GROUP BY
 ORDER BY
         EVENTO.id_evento;
 ```
-
-> _Espaço reservado para o gráfico/print do resultado da Consulta 1._
-
-<!-- ![Resultado Consulta 1](imagens/consulta1.png) -->
+<p align="center">
+  <img src="images/consulta_1.jpg" alt="Resultado da Consulta 1" width="700">
+</p>
 
 ### Consulta 2 — Número de atrações por evento
 
@@ -197,9 +196,9 @@ ORDER BY
     EVENTO.id_evento;
 ```
 
-> _Espaço reservado para o gráfico/print do resultado da Consulta 2._
-
-<!-- ![Resultado Consulta 2](imagens/consulta2.png) -->
+<p align="center">
+  <img src="images/consulta_2.jpg" alt="Resultado da Consulta 2" width="700">
+</p>
 
 ### Consulta 3 — Ingressos restantes até a lotação máxima
 
@@ -225,13 +224,13 @@ ORDER BY
     EVENTO.id_evento;
 ```
 
-> _Espaço reservado para o gráfico/print do resultado da Consulta 3._
-
-<!-- ![Resultado Consulta 3](imagens/consulta3.png) -->
+<p align="center">
+  <img src="images/consulta_3.jpg" alt="Resultado da Consulta 3" width="700">
+</p>
 
 ### Consulta Extra — Ranking de compras por usuário
 
-Consulta adicional (não presente no relatório original) que mostra o ranking de usuários por quantidade de compras realizadas.
+Consulta adicional que mostra o ranking de usuários por quantidade de compras realizadas.
 
 ```sql
 SELECT
@@ -249,51 +248,6 @@ ORDER BY
     count(*) DESC;
 ```
 
-> _Espaço reservado para o gráfico/print do resultado da Consulta Extra._
-
-<!-- ![Resultado Consulta Extra](imagens/consulta_extra.png) -->
-
-## 💻 Trechos de código relevantes
-
-### Conexão com o banco
-
-```python
-def connect_resgatocao():
-    cnx = mysql.connector.connect(host='localhost', database='modelo', user='root', password='123')
-    if cnx.is_connected():
-        db_info = cnx.get_server_info()
-        print("Conectado ao servidor MySQL versão ", db_info)
-        cursor = cnx.cursor()
-        cursor.execute("select database();")
-        linha = cursor.fetchone()
-        print("Conectado ao banco de dados ", linha)
-        cursor.close()
-    return cnx
-```
-
-> _Espaço reservado para um print/imagem do código completo (opcional)._
-
-<!-- ![Trecho de código](imagens/codigo.png) -->
-
-### Exemplo de criação de tabela (DDL)
-
-```python
-tables = {'PONTO_DE_VENDA': (
-    """CREATE TABLE `PONTO_DE_VENDA` (
-      `id_ponto_de_venda` integer PRIMARY KEY NOT NULL,
-      `nome` varchar(50) NOT NULL,
-      `bairro` varchar(50) NOT NULL,
-      `cidade` varchar(50) NOT NULL,
-      `estado` varchar(50) NOT NULL,
-      `rua` varchar(50) NOT NULL,
-      `numero` integer NOT NULL
-    ) ENGINE=InnoDB"""),
-    ...
-}
-```
-
-Cada tabela é definida como uma string SQL dentro do dicionário `tables`, e a função `create_all_tables()` percorre esse dicionário executando cada `CREATE TABLE`, tratando o erro de "tabela já existe" (`ER_TABLE_EXISTS_ERROR`) sem interromper a execução.
-
 ## 📁 Estrutura do repositório
 
 ```
@@ -302,7 +256,3 @@ Lucas_Nikolas/
 ├── Relatorio.pdf        # Relatório completo do trabalho
 └── README.md            # Este arquivo
 ```
-
-## 📄 Licença
-
-Trabalho acadêmico desenvolvido para fins educacionais na disciplina de Banco de Dados I — UFSC Araranguá.
