@@ -332,4 +332,3 @@ Complete report developed for the Database I course.
 ## 📄 Project documents
 
 * 📄 **[Report](docs/report.pdf)**
-**Database I (DEC7129) — 2024/1**
